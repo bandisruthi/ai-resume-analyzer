@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .score {
+            font-size: 24px;
+            color: green;
+        }
+
+        .missing {
+            color: red;
+        }
+
+        ul {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📊 Resume Analysis</h2>
+
+    <h3>🎯 Role: {{ role }}</h3>
+
+    <h3>✅ Detected Skills:</h3>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3 class="score">Score: {{ score }}%</h3>
+
+    <h3 class="missing">⚠ Missing Skills:</h3>
+    <ul>
+        {% for skill in missing %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
